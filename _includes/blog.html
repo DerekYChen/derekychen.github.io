@@ -7,13 +7,13 @@
                 <hr class="star-primary">
                 {% assign post = site.posts.first %}
  				{% assign content = post.content %}
- 				<p>Check out a preview of my blog below. Click the header above to see all the posts!</p> <br>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
                 {{post.preview}}
+                <a class="btn btn-success btn-sml" href="{{site.baseurl}}/blog">See More Posts</a>
             </div>
         </div>
 	</div>
