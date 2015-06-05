@@ -39,6 +39,13 @@ a.active {
 	outline: none;
 }
 
+a.anchor{
+	display: block; 
+	position: relative; 
+	top: -100px; 
+	visibility: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
@@ -188,7 +195,7 @@ header {
 }
 
 section {
-    padding: 100px 0;
+    padding: 50px 0;
     h2 {
     	margin: 0;
     	font-size: 3em;
