@@ -1,0 +1,48 @@
+---
+title: Digress
+description: Convoluted Causality
+layout: blog
+---
+{% for post in paginator.posts %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <hr class="star-primary">
+                <p class="date">{{post.date | date: '%B %d, %Y'}}</p>
+                {{post.preview}}
+                <a class="btn btn-success btn-sml" href="{{ post.url }}">See More</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+    <div class="text-center">
+        <ul class="pagination">
+            {% if paginator.previous_page %}
+                <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
+            {% else %}
+                <li class="disabled"><a href="#">&laquo; Prev</a></li>
+            {% endif %}
+
+            {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                    <li><a href="#">{{ page }}</a></li>
+                {% elsif page == 1 %}
+                    <li><a href="{{ '/blog/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+                {% else %}
+                    <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if paginator.next_page %}
+                <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+            {% else %}
+                <li class="disabled"><a href="#">Next &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}
