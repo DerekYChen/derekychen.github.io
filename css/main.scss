@@ -188,11 +188,15 @@ header {
 }
 
 section {
-    padding: 50px 0;
+    padding: 100px 0;
     h2 {
     	margin: 0;
     	font-size: 3em;
     }
+}
+
+section.blogpost{
+	padding: 50px 0;
 }
 
 section.blog {
