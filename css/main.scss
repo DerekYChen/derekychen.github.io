@@ -1,9 +1,9 @@
 ---
 ---
 
-$colorPrimary: #3E6FE8; //#2c3e50
-$colorAccentLight: #44ACFF; //#18bc9c
-$colorAccentDark: #0A3DBD;
+$colorPrimary: #0191CB; //#3E6FE8
+$colorAccentLight: #74C2E1; //#46AAD9
+$colorAccentDark: #005B9A; //#0A3DBD;
 $gray-lighter: #eeeeee;
 
 @import "mixins";
@@ -174,17 +174,18 @@ header {
 			a,
 			a:hover,
 			a:focus {
-				background-color: #0A3DBD;
+				background-color: $colorAccentDark;
 			}
 		}
 		li {
 			a:focus, 
 			a:hover {
-				color: $colorAccentLight;
+				color: $colorAccentDark;
 				outline: none;
 			}
 		}
 	}
+
 }
 
 .navbar-default,
@@ -393,6 +394,11 @@ footer {
 	outline: none;
 	background-color: $colorAccentDark;
 	border-color: $colorAccentDark;
+}
+
+.btn-primary{
+	background-color: $colorPrimary;
+	border-color: $colorPrimary;
 }
 
 .scroll-top {
